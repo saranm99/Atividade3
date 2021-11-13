@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ratings de Filmes</title>
+</head>
+<body>
+    <div class="header">
+        <h1>Descobre o rating de qualquer filme!</h1>
+    </div>
+    <style>
+        body {
+            background-image: url('https://media2.fdncms.com/stranger/imager/u/original/37205116/original-movie.jpg');
+            background-attachment: fixed;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        form {
+            margin-top: 150px;
+            width: 500px;
+            max-width: 450px;
+            background-color: rgb(242, 215, 213);
+            border-radius: 25px;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-self: center;
+            box-shadow: 2px 2px 5px black;
+
+        }
+
+        form input {
+            margin-bottom: 5px;
+            margin-top: 5px;
+            margin-left: 5px;
+            margin-right: 5px;
+            padding: 15px;
+        }
+
+        form input[type="submit"] {
+            cursor: pointer;
+            transition: all .3s ease-in-out;
+            padding: 5px;
+            border: none;
+            border-radius: 15px;
+            color: #fff;
+            background-color: rgb(127, 179, 213);
+            font-size: 14px;
+            font-family: Verdana, sans-serif;
+            text-shadow: 2px 2px 5px black;
+            display: inline-block;
+            width: 100px;
+            align-self: center;
+            
+        }
+
+        form input[type="submit"]:hover {
+            color: rgb(127, 179, 213);
+            background-color: #fff;
+            text-shadow: 2px 2px 5px grey;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+        }
+        .value {
+            border-radius: 15px;
+            align-self: center;
+            color: white;
+            font-size: 48px;
+            font-family: Verdana, sans-serif;
+            font-weight: bold;
+            text-shadow: 3px 3px 5px black;
+            
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            font-size: 30px;
+            font-family: Verdana, sans-serif;
+            text-shadow: 1px 1px 2px black, 0 0 25px rgb(52, 152, 219), 0 0 5px rgb(21, 67, 96);
+        }
+
+    </style>
+
+    <form action="send-url" method="post">
+        <input type="text" placeholder="Põe um URL do IMDb aqui..." name="myurl">
+        <input type="submit" value="Submeter">
+    </form>
+
+    <div class="container">
+        <p class="value">
+            <% if(value != '') { %>
+                <%= title %> : <%=value %>
+            <%} %>
+        </p>
+    </div>
+
+
+    
+</body>
+</html>
